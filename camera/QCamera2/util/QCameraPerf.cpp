@@ -102,6 +102,7 @@ void QCameraPerfLock::lock_init()
 {
     const char *rc;
     char value[PROPERTY_VALUE_MAX];
+    int len;
 
     LOGD("E");
     Mutex::Autolock lock(mLock);
@@ -515,7 +516,6 @@ void QCameraPerfLock::powerHint(power_hint_t hint, bool enable)
             if (*it == hint) {
                 if (it != mActivePowerHints.begin()) {
                     LOGW("Request to remove the previous power hint: %d instead of "
-                    LOGW("Request to remove the previous power hint: %d instead of"
                             "currently active power hint: %d", static_cast<int>(hint),
                                                             static_cast<int>(mCurrentPowerHint));
                 }
